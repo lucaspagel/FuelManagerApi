@@ -23,3 +23,13 @@ type Consumo struct {
 
 	Veiculo Veiculo
 }
+
+// Port
+type ConsumoRepository interface {
+	GetAll() (map[int]Consumo, error)
+	GetById(id int) (Consumo, error)
+	Create(v Consumo) (Consumo, error)
+	Update(id int, v Consumo) (Consumo, error)
+	PatchUpdate(id int, v Consumo) (Consumo, error)
+	Delete(id int) (Consumo, error)
+}

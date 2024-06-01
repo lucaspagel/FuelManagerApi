@@ -72,7 +72,7 @@ func (s *VeiculoRepositoryStub) Update(id int, v Veiculo) (Veiculo, error) {
 	return v, nil
 }
 
-func (s *VeiculoRepositoryStub) PatchUpdate(id int, v Veiculo /*updates map[string]interface{}*/) (Veiculo, error) {
+func (s *VeiculoRepositoryStub) PatchUpdate(id int, v Veiculo) (Veiculo, error) {
 	existingVeiculo, exists := s.veiculos[id]
 	if !exists {
 		return Veiculo{}, errors.New("veiculo com id não existente")
